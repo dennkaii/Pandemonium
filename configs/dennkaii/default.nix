@@ -46,7 +46,6 @@
     qs.enable = true;
     #Launcher and notification daemon
     fuzzel.enable = true;
-    fnott.enable = true;
     #Git
     git.enable = true;
     radicle.enable = false;
@@ -84,7 +83,6 @@
       suwayomi.enable = true;
     };
     #terminal multiplexer but plugins no worky
-    tmux.enable = false;
     #define fonts and global theme
     stylix.enable = true;
     # literal games
@@ -98,7 +96,6 @@
     # DISABLED FOREVER PROBABLY
     mako.enable = true;
     fish.enable = false;
-    rbw.enable = true;
     anyrun.enable = false;
     arduino.enable = false;
     #Migrated to ompsh
