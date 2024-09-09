@@ -57,27 +57,42 @@
   };
 in {
   inputs = {
-    nix-super.url = "github:privatevoid-net/nix-super/ba035e1ea339a97e6ba6a1dd79e0c0e334240234";
+    # nix-super.url = "github:privatevoid-net/nix-super";
+    nix-dram = {
+      url = "github:dramforever/nix-dram";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   hm.nix.settings = nixSettings;
 
   os = {
-    # nixpkgs.overlays = [
-    #   (_: _: {
-    #   nix-super = inputs.nix-super.packages.${pkgs.system}.default;      })
-    # ];
-
     documentation = {
       enable = true;
       doc.enable = true;
       man.enable = true;
     };
-
+    nixpkgs = {
+      overlays = [
+        (final: prev: {
+          nix = inputs.nix-dram.packages.${pkgs.system}.default.overrideAttrs (old: {
+            patches =
+              old.patches
+              or []
+              ++ [
+                (pkgs.fetchpatch {
+                  url = "https://raw.githubusercontent.com/Noah765/combined-manager/main/nix-patches/2.24.4/evaluable-flake.patch";
+                  hash = "sha256-72mFg401gUMeSRMqxdcFhW4e4FCFMMz2AFhwoxqg8oc=";
+                })
+              ];
+          });
+        })
+      ];
+    };
     nix = let
       mappedRegistry = lib.mapAttrs (_: v: {flake = v;}) inputs;
     in {
-      package = inputs.nix-super.packages.${pkgs.system}.default;
+      # package = inputs.nix-super.packages.${pkgs.system}.default;
 
       registry =
         mappedRegistry
