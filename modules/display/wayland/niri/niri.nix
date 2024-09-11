@@ -117,6 +117,25 @@ in {
           DISPLAY = ":0";
         };
 
+        window-rules = [
+          {
+            geometry-corner-radius = let
+              r = 8.0;
+            in {
+              top-left = r;
+              top-right = r;
+              bottom-left = r;
+              bottom-right = r;
+            };
+            clip-to-geometry = true;
+          }
+          {
+            # dim unfocused windows
+            matches = [{is-focused = false;}];
+            opacity = 0.70;
+          }
+        ];
+
         binds = with hmConfig.lib.niri.actions; let
           mod = "Super";
           ms = "${mod}+Shift";
