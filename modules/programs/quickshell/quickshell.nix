@@ -8,7 +8,7 @@
   cfg = config.programs.qs;
   inherit (lib) mkIf mkEnableOption;
 in {
-  options.programs.qs.enable = mkEnableOption "quickshell(AGS replacement maybe????)";
+  options.programs.qs.enable = mkEnableOption "quickshell(AGS replacement maybe)";
 
   config = mkIf cfg.enable {
     inputs.qs = {
