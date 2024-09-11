@@ -56,6 +56,7 @@ in {
             enableLSP = true;
             enableFormat = true;
             nix.enable = true;
+            rust.enable = true;
           };
           lsp = {
             formatOnSave = true;
