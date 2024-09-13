@@ -55,8 +55,11 @@ in {
           languages = {
             enableLSP = true;
             enableFormat = true;
+            # enableTreesitter = true;
             nix.enable = true;
             rust.enable = true;
+            html.enable = true;
+            ts.enable = true;
           };
           lsp = {
             formatOnSave = true;
