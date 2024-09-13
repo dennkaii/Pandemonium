@@ -95,8 +95,8 @@ in {
           BANger.enabled = false;
           BetterFolders = {
             enabled = true;
-            sidebar = true;
-            sidebarAnim = true;
+            sidebar = false;
+            sidebarAnim = false;
             closeAllFolders = false;
             closeAllHomeButton = false;
             closeOthers = false;

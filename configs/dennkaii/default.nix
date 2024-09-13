@@ -66,7 +66,7 @@
     # kdeConnect
     kde.enable = false;
     #Terminal prompt theming
-    ompsh.enable = true;
+    ompsh.enable = false;
     #Recording
     obs.enable = false;
     #Default shell
@@ -99,7 +99,7 @@
     anyrun.enable = false;
     arduino.enable = false;
     #Migrated to ompsh
-    starship.enable = false;
+    starship.enable = true;
   };
 
   services = {
