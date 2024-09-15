@@ -21,7 +21,5 @@
 
   desktops = {
     enable = true;
-
-    niri.enable = lib.mkForce false;
   };
 }
