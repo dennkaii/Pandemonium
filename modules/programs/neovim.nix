@@ -25,6 +25,7 @@ in {
       enable = true;
       settings = {
         vim = {
+          package = pkgs.neovim-unwrapped;
           autoIndent = true;
           autocomplete.enable = true;
           autopairs.enable = true;
@@ -55,7 +56,7 @@ in {
           languages = {
             enableLSP = true;
             enableFormat = true;
-            # enableTreesitter = true;
+            enableTreesitter = true;
             nix.enable = true;
             rust.enable = true;
             html.enable = true;

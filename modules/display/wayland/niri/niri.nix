@@ -61,7 +61,7 @@ in {
           xwayland = [
             "sh"
             "${pkgs.writeShellScript "xwayland_on_niri" ''
-              ${pkgs.toybox}/bin/setsid ${pkgs.xwayland-satellite}/bin/xwayland-satellite
+              ${pkgs.toybox}/bin/setsid ${pkgs.xwayland-satellite-unstable}/bin/xwayland-satellite
               ${pkgs.toybox}/bin/sleep 4
               ${pkgs.dbus}/bin/dbus-update-activation-environment --systemd "DISPLAY"
             ''}"
@@ -198,9 +198,6 @@ in {
       swww
       satty
       grimblast
-    ];
-    os.environment.systemPackages = with pkgs; [
-      xwayland-satellite
     ];
     os.systemd.user = {
       services = {
