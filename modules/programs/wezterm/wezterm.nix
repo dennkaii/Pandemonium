@@ -19,10 +19,11 @@ in {
       programs.wezterm = {
         enable = true;
         package = inputs.wezterm.packages.${pkgs.system}.default;
-        colorSchemes = let
-          colors = inputs.basix.schemeData.base16.oxocarbon-dark.palette;
-        in
-          import ./colorSchemes.nix {inherit colors;};
+        # colorSchemes = let
+        #   colors = inputs.basix.schemeData.base16.oxocarbon-dark.palette;
+        # in
+        #   import ./colorSchemes.nix {inherit colors;};
+
         extraConfig = ''
           local wez = require("wezterm")
           local act = wezterm.action
@@ -84,13 +85,13 @@ in {
             {key = 'j', mods = 'LEADER' , action  = wezterm.action.ActivatePaneDirection "Down"},
             {key = 'k', mods = 'LEADER' , action  = wezterm.action.ActivatePaneDirection "Up"},
             {key = 'l', mods = 'LEADER' , action  = wezterm.action.ActivatePaneDirection "Right"},
-               }
+               },
 
 
            -- colors
            -- the followSystem theme is defined in colorSchemes.nix
            -- as per my base16 theming options
-           color_scheme = "followSystem",
+           -- color_scheme = "followSystem",
           }
 
           return baseConfig
