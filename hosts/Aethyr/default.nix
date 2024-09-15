@@ -1,16 +1,16 @@
 {
   pkgs,
-  osConfig,
-  inputs,
-  config,
   lib,
   ...
 }: {
-  osModules = [
-    ./hardware-configuration.nix
-    # inputs.nixos-hardware.nixosModules.dell-inspiron-14-5420
-  ];
+  imports = [./hardware];
 
+<<<<<<< ours
+  users = {
+    main = "dennkaii";
+    host = "Aethyr";
+  };
+=======
   inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
   os = {
@@ -74,7 +74,7 @@
 
     security.rtkit.enable = true;
 
-    hardware.pulseaudio.enable = lib.mkForce true; #disable pulseAudio
+    hardware.pulseaudio.enable = lib.mkForce false; #disable pulseAudio
 
     services = {
       thermald.enable = true;
@@ -88,24 +88,34 @@
 
       gnome.gnome-keyring.enable = true;
 
-      # pipewire = {
-      #   enable = true;
-      #   audio.enable = true;
-      #   alsa.enable = true;
-      #   alsa.support32Bit = true;
-      #   pulse.enable = true;
-      #   wireplumber.enable = true;
-      #   jack.enable = true;
-      # };
+      # pipewire.enable = lib.mkForce false;
+      pipewire = {
+        enable = true;
+        audio.enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        wireplumber.enable = true;
+        jack.enable = true;
+      };
 
       #auto loign for user
       # getty.autologinUser = "${config.users.main}";
+>>>>>>> theirs
 
-      #ags battery
-      upower.enable = true;
+  defaults = {
+    terminal = "wezterm";
+    cursor = {
+      name = "Breeze_Snow";
+      size = 24;
+      pkg = pkgs.kdePackages.breeze;
     };
   };
 
-  os.system.stateVersion = "23.05";
-  hm.home.stateVersion = "23.05";
+  desktop = {
+    river.enable = lib.mkDefault false;
+    hyprland.enable = lib.mkDefault false;
+    fcitx.enable = lib.mkDefault true;
+    niri.enable = lib.mkDefault true;
+  };
 }
