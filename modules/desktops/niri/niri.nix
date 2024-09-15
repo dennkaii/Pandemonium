@@ -6,9 +6,9 @@
   lib,
   ...
 }: let
-  cfg = config.display.niri;
+  cfg = config.desktops.niri;
 in {
-  options.display.niri = {
+  options.desktops.niri = {
     enable = lib.mkEnableOption "niri";
   };
   config = lib.mkIf cfg.enable {

@@ -4,22 +4,21 @@
   pkgs,
   ...
 }: let
-cfg = config.display.fcitx;
+  cfg = config.desktops.fcitx;
 
-inherit(lib) mkEnableOption mkIf;
-
+  inherit (lib) mkEnableOption mkIf;
 in {
-  options.display.fcitx.enable = mkEnableOption "fcitx";
+  options.desktops.fcitx.enable = mkEnableOption "fcitx";
 
   config = mkIf cfg.enable {
-      hm = {
+    hm = {
       i18n.inputMethod = {
         enabled = "fcitx5";
         fcitx5.addons = with pkgs; [
           fcitx5-hangul
           fcitx5-gtk
         ];
-      };    
+      };
     };
   };
 }
