@@ -4,11 +4,11 @@
   pkgs,
   ...
 }: let
-  cfg = config.display.fcitx;
+  cfg = config.desktops.fcitx;
 
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.display.fcitx.enable = mkEnableOption "fcitx";
+  options.desktops.fcitx.enable = mkEnableOption "fcitx";
 
   config = mkIf cfg.enable {
     hm = {
