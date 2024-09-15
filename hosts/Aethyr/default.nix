@@ -21,5 +21,6 @@
 
   desktops = {
     enable = true;
+    niri.enable = true;
   };
 }
