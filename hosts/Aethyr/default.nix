@@ -1,16 +1,16 @@
 {
   pkgs,
-  osConfig,
-  inputs,
-  config,
   lib,
   ...
 }: {
-  osModules = [
-    ./hardware-configuration.nix
-    # inputs.nixos-hardware.nixosModules.dell-inspiron-14-5420
-  ];
+  imports = [./hardware];
 
+<<<<<<< ours
+  users = {
+    main = "dennkaii";
+    host = "Aethyr";
+  };
+=======
   inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
   os = {
@@ -101,12 +101,21 @@
 
       #auto loign for user
       # getty.autologinUser = "${config.users.main}";
+>>>>>>> theirs
 
-      #ags battery
-      upower.enable = true;
+  defaults = {
+    terminal = "wezterm";
+    cursor = {
+      name = "Breeze_Snow";
+      size = 24;
+      pkg = pkgs.kdePackages.breeze;
     };
   };
 
-  os.system.stateVersion = "23.05";
-  hm.home.stateVersion = "23.05";
+  desktop = {
+    river.enable = lib.mkDefault false;
+    hyprland.enable = lib.mkDefault false;
+    fcitx.enable = lib.mkDefault true;
+    niri.enable = lib.mkDefault true;
+  };
 }
