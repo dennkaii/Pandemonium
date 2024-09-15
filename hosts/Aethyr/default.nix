@@ -20,7 +20,8 @@
   };
 
   desktops = {
-    niri.enable = true;
-    fcitx.enable = true;
+    enable = true;
+
+    niri.enable = lib.mkForce false;
   };
 }

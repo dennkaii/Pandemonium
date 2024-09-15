@@ -24,6 +24,7 @@ in {
       enable = true;
       package = pkgs.niri-unstable;
     };
+    # os.niri-flake.cache.enable = lib.mkForce true;
     os.xdg.portal = {
       enable = true;
 
