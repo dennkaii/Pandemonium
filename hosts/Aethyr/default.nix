@@ -20,9 +20,7 @@
   };
 
   desktops = {
-    river.enable = lib.mkDefault false;
-    hyprland.enable = lib.mkDefault false;
-    fcitx.enable = lib.mkDefault true;
-    niri.enable = lib.mkDefault true;
+    niri.enable = true;
+    fcitx.enable = true;
   };
 }
