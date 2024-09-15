@@ -5,10 +5,10 @@
   config,
   ...
 }: let
-  cfg = config.display.hyprland;
+  cfg = config.desktops.hyprland;
   inherit (lib) mkEnableOption mkIf mkMerge mapAttrsToList;
 in {
-  options.display.hyprland = {
+  options.desktops.hyprland = {
     enable = mkEnableOption "hyprland";
   };
 
