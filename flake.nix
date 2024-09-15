@@ -17,6 +17,7 @@ in
         inputs.nixpkgs.follows = "nixpkgs";
       };
       flake-parts.url = "github:hercules-ci/flake-parts";
+      basix.url = "github:NotAShelf/Basix";
     };
 
     globalModules = [
@@ -24,10 +25,12 @@ in
     ];
 
     configurations = {
-      Aethyr.modules = [
-        ./hosts/Aethyr
-        ./configs/dennkaii
-      ];
+      Aethyr = {
+        modules = [
+          ./hosts/Aethyr
+          ./configs/dennkaii
+        ];
+      };
     };
 
     outputs = inputs @ {
