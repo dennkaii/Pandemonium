@@ -15,15 +15,15 @@
     wallpaper = "${toString config.defaults.flake_dir}/wallpapers/tile-tapestry.jpeg";
   };
 
-  display = {
-    # hyprland.enable = true;
-    river.enable = false;
-    #not used anymore
-    # sddm.enable = true;
-    # for 한굴
-    fcitx.enable = true;
-    niri.enable = true;
-  };
+  # display = {
+  #   # hyprland.enable = true;
+  #   river.enable = false;
+  #   #not used anymore
+  #   # sddm.enable = true;
+  #   # for 한굴
+  #   fcitx.enable = true;
+  #   niri.enable = true;
+  # };
 
   fonts.enable = true;
 

@@ -4,9 +4,9 @@
   lib,
   ...
 }: let
-  cfg = config.display.river;
+  cfg = config.desktops.river;
 in {
-  options.display.river.enable = lib.mkEnableOption "river wm";
+  options.desktops.river.enable = lib.mkEnableOption "river wm";
 
   config = lib.mkIf cfg.enable {
     os = {

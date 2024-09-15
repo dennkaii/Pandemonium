@@ -20,7 +20,6 @@
   };
 
   desktops = {
-    niri.enable = true;
-    fcitx.enable = true;
+    enable = true;
   };
 }
