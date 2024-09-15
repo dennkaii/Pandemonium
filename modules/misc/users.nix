@@ -11,7 +11,13 @@ in {
     main = mkOption {
       type = with types; str;
       description = ''
-        List of package names that are allowed to be installed dispite being unfree.
+        Main user
+      '';
+    };
+    host = mkOption {
+      type = with types; str;
+      description = ''
+        Host name
       '';
     };
 
@@ -26,6 +32,7 @@ in {
 
   config = {
     os = {
+      networking.hostName = cfg.host;
       users.users.root = {
         group = "root";
         hashedPassword = "$6$Zph0AgVL/4E0MTzN$xT4licArTl4ZHjUhQx.V87t3qoLGVZNucqhCH4h/UYx7gcDH6eTNb/dpJBvApl1dyTPgERf7Hu1w1HkVlKSJf/";
