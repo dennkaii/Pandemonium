@@ -23,4 +23,8 @@
     enable = true;
     niri.enable = true;
   };
+
+  core = {
+    nix.enable = true;
+  };
 }
