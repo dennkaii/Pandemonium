@@ -74,7 +74,7 @@
 
     security.rtkit.enable = true;
 
-    hardware.pulseaudio.enable = lib.mkForce false; #disable pulseAudio
+    hardware.pulseaudio.enable = lib.mkForce true; #disable pulseAudio
 
     services = {
       thermald.enable = true;
@@ -88,16 +88,15 @@
 
       gnome.gnome-keyring.enable = true;
 
-      # pipewire.enable = lib.mkForce false;
-      pipewire = {
-        enable = true;
-        audio.enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        wireplumber.enable = true;
-        jack.enable = true;
-      };
+      # pipewire = {
+      #   enable = true;
+      #   audio.enable = true;
+      #   alsa.enable = true;
+      #   alsa.support32Bit = true;
+      #   pulse.enable = true;
+      #   wireplumber.enable = true;
+      #   jack.enable = true;
+      # };
 
       #auto loign for user
       # getty.autologinUser = "${config.users.main}";

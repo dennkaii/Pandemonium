@@ -32,10 +32,14 @@ in {
 
     hm = {
       home.packages = with pkgs; [
-        pwvucontrol
+        # pipewire-pavucontrol
+        # pwvucontrol
+        # linux-wallpaperengine
         psmisc
         alsa-utils
+        # fwupd
 
+        #zen browser
         inputs.zen-browser.packages."${system}".default
 
         libreoffice-qt
@@ -43,6 +47,7 @@ in {
         flatpak
         gnome.gnome-software
         obsidian
+        pavucontrol
         gitbutler
 
         zig
