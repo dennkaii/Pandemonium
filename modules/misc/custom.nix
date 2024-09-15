@@ -21,7 +21,7 @@
 
       flake_dir = lib.mkOption {
         type = with lib.types; path;
-        default = /home/${config.users.main}/NixArchy;
+        default = /home/${config.users.main}/Pandemonium;
       };
 
       cursor = lib.mkOption {
