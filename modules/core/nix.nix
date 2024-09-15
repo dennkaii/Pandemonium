@@ -15,7 +15,7 @@
     auto-optimise-store = true;
 
     sandbox = true;
-    max-jobs = "4";
+    max-jobs = 4;
 
     keep-going = true;
     log-lines = 30;
@@ -55,16 +55,18 @@
     ];
   };
 in {
-  inputs = {
-    # nix-super.url = "github:privatevoid-net/nix-super";
-    nix-dram = {
-      url = "github:dramforever/nix-dram";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
-  hm.nix.settings = nixSettings;
+  options.core.nix.enable = lib.mkEnableOption "Core settings and patched nix for combined-manager to work";
   config = lib.mkIf cfg.enable {
+    inputs = {
+      # nix-super.url = "github:privatevoid-net/nix-super";
+      nix-dram = {
+        url = "github:dramforever/nix-dram";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+    };
+
+    hm.nix.settings = nixSettings;
+
     os = {
       documentation = {
         enable = true;
