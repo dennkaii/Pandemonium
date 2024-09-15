@@ -41,14 +41,12 @@
     # packages i was lazy to make a module for
     packages.enable = true;
 
+    mako.enable = true;
     walker.enable = true;
     #Wigets
     qs.enable = true;
-    #Launcher and notification daemon
-    fuzzel.enable = true;
     #Git
     git.enable = true;
-    radicle.enable = false;
     #Idr now
     prism.enable = false;
     # browser
@@ -57,16 +55,15 @@
     superfile.enable = true;
     #Vesktop discord
     discord.enable = true;
+    starship.enable = true;
     #Wallpapaer, lockscreen and idle daemon
     hyprlock.enable = true;
     hypridle.enable = true;
-    hyprpaper.enable = false;
     # Not Being used
     waybar.enable = true;
     # kdeConnect
     kde.enable = false;
     #Terminal prompt theming
-    ompsh.enable = false;
     #Recording
     obs.enable = false;
     #Default shell
@@ -84,7 +81,6 @@
     };
     #terminal multiplexer but plugins no worky
     #define fonts and global theme
-    stylix.enable = true;
     # literal games
     games = {
       osu-lazer.enable = true;
@@ -94,12 +90,15 @@
     };
 
     # DISABLED FOREVER PROBABLY
-    mako.enable = true;
     fish.enable = false;
+    radicle.enable = false;
+    fuzzel.enable = false;
+    stylix.enable = false;
     anyrun.enable = false;
     arduino.enable = false;
+    hyprpaper.enable = false;
+    ompsh.enable = false;
     #Migrated to ompsh
-    starship.enable = true;
   };
 
   services = {
