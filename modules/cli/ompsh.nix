@@ -3,10 +3,10 @@
   lib,
   ...
 }: let
-  cfg = config.programs.ompsh;
+  cfg = config.cli.ompsh;
   inherit (lib) mkIf mkEnableOption;
 in {
-  options.programs.ompsh.enable = mkEnableOption "oh-my-posh toogle";
+  options.cli.ompsh.enable = mkEnableOption "terminal prompt for any shell";
 
   config = mkIf cfg.enable {
     hm.programs.eza = {

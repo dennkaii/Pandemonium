@@ -6,6 +6,8 @@
   ...
 }: let
   cfg = config.programs.terminals.wezterm;
+  colors = inputs.basix.schemeData.base16.oxocarbon-dark.palette;
+
   inherit (lib) mkIf mkEnableOption;
 in {
   options.programs.terminals.wezterm.enable = mkEnableOption "wezterm";
@@ -19,10 +21,7 @@ in {
       programs.wezterm = {
         enable = true;
         package = inputs.wezterm.packages.${pkgs.system}.default;
-        # colorSchemes = let
-        #   colors = inputs.basix.schemeData.base16.oxocarbon-dark.palette;
-        # in
-        #   import ./colorSchemes.nix {inherit colors;};
+        colorSchemes = import ./colorSchemes.nix {inherit colors;};
 
         extraConfig = ''
           local wez = require("wezterm")
@@ -91,7 +90,7 @@ in {
            -- colors
            -- the followSystem theme is defined in colorSchemes.nix
            -- as per my base16 theming options
-           -- color_scheme = "followSystem",
+            color_scheme = "followSystem",
           }
 
           return baseConfig

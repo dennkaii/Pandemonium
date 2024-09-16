@@ -4,10 +4,10 @@
   config,
   ...
 }: let
-  cfg = config.programs.nu;
+  cfg = config.cli.nu;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.programs.nu.enable = mkEnableOption "nu";
+  options.cli.nu.enable = mkEnableOption "new type of shell";
   config = mkIf cfg.enable {
     os.users.defaultUserShell = pkgs.nushell;
 

@@ -4,10 +4,10 @@
   lib,
   ...
 }: let
-  cfg = config.programs.starship;
+  cfg = config.cli.starship;
   inherit (lib) mkIf mkEnableOption;
 in {
-  options.programs.starship = {
+  options.cli.starship = {
     enable = mkEnableOption "starship";
   };
 

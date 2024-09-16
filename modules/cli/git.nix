@@ -4,10 +4,10 @@
   lib,
   ...
 }: let
-  cfg = config.programs.git;
+  cfg = config.cli.git;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.programs.git = {
+  options.cli.git = {
     enable = mkEnableOption "git";
   };
 
