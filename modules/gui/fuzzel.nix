@@ -4,9 +4,9 @@
   lib,
   ...
 }: let
-  cfg = config.programs.fuzzel;
+  cfg = config.gui.fuzzel;
 in {
-  options.programs.fuzzel.enable = lib.mkEnableOption "fuzzel";
+  options.gui.fuzzel.enable = lib.mkEnableOption "fuzzel";
 
   config = lib.mkIf cfg.enable {
     hm.programs = {

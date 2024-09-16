@@ -5,10 +5,10 @@
   inputs,
   ...
 }: let
-  cfg = config.programs.walker;
+  cfg = config.gui.walker;
   inherit (lib) mkIf mkEnableOption;
 in {
-  options.programs.walker.enable = mkEnableOption "anyrun replacement";
+  options.gui.walker.enable = mkEnableOption "anyrun replacement";
 
   config = mkIf cfg.enable {
     inputs.walker.url = "github:abenz1267/walker";

@@ -1,13 +1,12 @@
 {
-  pkgs,
   config,
   lib,
   ...
 }: let
-cfg = config.programs.emacs;
-inherit(lib) mkIf mkEnableOption;
+  cfg = config.tui.emacs;
+  inherit (lib) mkIf mkEnableOption;
 in {
-  options.programs.emacs.enable = mkEnableOption "emacs";
+  options.tui.emacs.enable = mkEnableOption "pointless module idk why i still have";
 
   config = mkIf cfg.enable {
     hm = {
@@ -15,7 +14,6 @@ in {
         enable = true;
 
         client.enable = true;
-
       };
     };
   };

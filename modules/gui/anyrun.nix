@@ -6,10 +6,10 @@
   inputs,
   ...
 }: let
-  cfg = config.programs.anyrun;
+  cfg = config.gui.anyrun;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.programs.anyrun = {
+  options.gui.anyrun = {
     enable = mkEnableOption "anyrun";
   };
 

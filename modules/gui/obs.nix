@@ -4,10 +4,10 @@
   lib,
   ...
 }: let
-  cfg = config.programs.obs;
+  cfg = config.gui.obs;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.programs.obs.enable = mkEnableOption "obs";
+  options.gui.obs.enable = mkEnableOption "obs";
 
   config = mkIf cfg.enable {
     hm = {

@@ -6,9 +6,9 @@
   ...
 }: let
   commonRoots = ["flake.lock" "package-lock.json" "yarn.lock" "pnpm-lock" "bun.lockb"];
-  cfg = config.programs.editor.helix;
+  cfg = config.tui.helix;
 in {
-  options.programs.editor.helix.enable = lib.mkEnableOption "helix-editor";
+  options.tui.helix.enable = lib.mkEnableOption "helix-editor";
   config = lib.mkIf cfg.enable {
     inputs.helix.url = "github:helix-editor/helix";
 

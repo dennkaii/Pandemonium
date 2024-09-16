@@ -5,9 +5,9 @@
   lib,
   ...
 }: let
-  cfg = config.programs.superfile;
+  cfg = config.tui.superfile;
 in {
-  options.programs.superfile.enable = lib.mkEnableOption "superfile";
+  options.tui.superfile.enable = lib.mkEnableOption "superfile";
 
   config = lib.mkIf cfg.enable {
     inputs.superfile.url = "github:MHNightCat/superfile";

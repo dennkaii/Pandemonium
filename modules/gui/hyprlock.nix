@@ -1,20 +1,14 @@
 {
   lib,
-  inputs,
-  pkgs,
   config,
   ...
 }: let
-  cfg = config.programs.hyprlock;
+  cfg = config.gui.hyprlock;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.programs.hyprlock.enable = mkEnableOption "hyprlock";
+  options.gui.hyprlock.enable = mkEnableOption "hyprlock";
 
   config = mkIf cfg.enable {
-    inputs.hyprlock.url = "github:hyprwm/hyprlock";
-
-    # hmModules = [inputs.hyprlock.homeManagerModules.default];
-
     hm.programs.hyprlock = {
       enable = true;
 
@@ -23,7 +17,7 @@ in {
 
         background = [
           {
-            path = "${config.defaults.wallpaper}";
+            path = "";
             monitor = "";
             # color = "rgba(25, 20, 20, 1.0)";
             blur_size = 3;

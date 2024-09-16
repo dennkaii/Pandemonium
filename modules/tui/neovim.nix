@@ -5,9 +5,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.programs.editor.neovim;
+  cfg = config.tui.neovim;
 in {
-  options.programs.editor.neovim.enable = lib.mkEnableOption "nvf";
+  options.tui.neovim.enable = lib.mkEnableOption "nvf";
 
   config = lib.mkIf cfg.enable {
     inputs = {

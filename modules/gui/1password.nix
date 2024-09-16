@@ -4,9 +4,9 @@
   lib,
   ...
 }: let
-  cfg = config.programs._1password;
+  cfg = config.gui._1password;
 in {
-  options.programs._1password.enable = lib.mkEnableOption "password_Manager";
+  options.gui._1password.enable = lib.mkEnableOption "password_Manager";
 
   config = lib.mkIf cfg.enable {
     os.programs = {
@@ -21,7 +21,9 @@ in {
 
     os.environment.etc = {
       "1password/custom_allowed_browsers" = {
-        text = ''zen-alpha'';
+        text = ''
+          .zen-wrapped
+        '';
         mode = "0755";
       };
     };

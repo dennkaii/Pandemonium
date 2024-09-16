@@ -5,12 +5,12 @@
   lib,
   ...
 }: let
-  cfg = config.programs.terminals.wezterm;
+  cfg = config.gui.wezterm;
   colors = inputs.basix.schemeData.base16.oxocarbon-dark.palette;
 
   inherit (lib) mkIf mkEnableOption;
 in {
-  options.programs.terminals.wezterm.enable = mkEnableOption "wezterm";
+  options.gui.wezterm.enable = mkEnableOption "wezterm";
 
   config = mkIf cfg.enable {
     inputs.wezterm = {

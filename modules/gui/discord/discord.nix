@@ -2,14 +2,13 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: let
-  cfg = config.programs.discord;
+  cfg = config.gui.discord;
   inherit (lib.strings) concatStrings;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.programs.discord = {
+  options.gui.discord = {
     enable = mkEnableOption "discord";
   };
 

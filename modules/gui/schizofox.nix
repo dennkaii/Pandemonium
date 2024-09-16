@@ -4,10 +4,10 @@
   config,
   ...
 }: let
-  cfg = config.programs.schizofox;
+  cfg = config.gui.schizofox;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.programs.schizofox = {
+  options.gui.schizofox = {
     enable = mkEnableOption "schizofox";
   };
 

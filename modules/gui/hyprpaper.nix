@@ -1,21 +1,16 @@
 {
   config,
   lib,
-  inputs,
   ...
 }: let
-  cfg = config.programs.hyprpaper;
+  cfg = config.gui.hyprpaper;
   inherit (lib) mkEnableOption mkIf;
 in {
   options = {
-    programs.hyprpaper.enable = mkEnableOption "hyprpaper";
+    programs.gui.hyprpaper.enable = mkEnableOption "hyprpaper";
   };
 
   config = mkIf cfg.enable {
-    inputs.hyprpaper.url = "github:hyprwm/hyprpaper";
-
-    # hmModules = [inputs.hyprpaper.homeManagerModules.default];
-
     hm.services.hyprpaper = {
       enable = true;
 

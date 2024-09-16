@@ -4,10 +4,10 @@
   config,
   ...
 }: let
-  cfg = config.programs.waybar;
+  cfg = config.gui.waybar;
   inherit (lib) mkIf mkEnableOption;
 in {
-  options.programs.waybar.enable = mkEnableOption "waybar";
+  options.gui.waybar.enable = mkEnableOption "waybar";
 
   config = mkIf cfg.enable {
     hm = {
