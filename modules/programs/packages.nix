@@ -88,9 +88,6 @@ in {
         rar
 
         kooha
-        # unrar
-
-        oculante
 
         nautilus
 

@@ -1,14 +1,14 @@
 {
   pkgs,
+  lib,
   config,
   ...
 }: let
   #stolen from https://github.com/linuxmobile/kaku/blob/main/home/software/xdg.nix
-  # browser = ["Schizofox"];
+  cfg = config.core.xdg;
+
   browser = ["zen"];
-  # browser = ["floorp"];
   imageViewer = ["oculante"];
-  Terminal = ["org.wezfurlong.wezterm"];
   videoPlayer = ["io.github.celluloid_player.Celluloid"];
   audioPlayer = ["io.bassi.Amberol"];
 
@@ -47,7 +47,7 @@
       "x-scheme-handler/steam" = ["steam"];
       "text/html" = browser;
       "inode/directory" = ["org.gnome.Nautilus"];
-      "text/plain" = ["Helix"];
+      "text/plain" = ["Neovim"];
       # "x-scheme-handler/chrome" = ["chromium-browser"];
     }
     // image
@@ -55,10 +55,12 @@
     // audio
     // browserTypes);
 in {
-  config = {
+  options.core.xdg.enable = lib.mkEnableOption "xdg mime types";
+  config = lib.mkIf cfg.enable {
     hm = {
       home.packages = with pkgs; [
         qimgv
+        oculante
         zathura
         celluloid
         amberol

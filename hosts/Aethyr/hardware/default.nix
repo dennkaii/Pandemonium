@@ -50,10 +50,6 @@
       networkmanager.enable = true;
     };
 
-    #   nixpkgs.config.packageOverrides = pkgs: {
-    #   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-    # };
-
     hardware = {
       bluetooth = {
         enable = true;
@@ -71,8 +67,6 @@
     };
 
     security.rtkit.enable = true;
-
-    hardware.pulseaudio.enable = lib.mkForce false; #disable pulseAudio
 
     services = {
       thermald.enable = true;
