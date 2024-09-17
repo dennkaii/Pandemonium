@@ -1,19 +1,14 @@
 {
   config,
   lib,
-  inputs,
   ...
 }: let
-  cfg = config.programs.hypridle;
+  cfg = config.services.hypridle;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.programs.hypridle.enable = mkEnableOption "hypridle";
+  options.services.hypridle.enable = mkEnableOption "hypridle";
 
   config = mkIf cfg.enable {
-    inputs.hypridle.url = "github:hyprwm/hypridle";
-
-    # hmModules = [inputs.hypridle.homeManagerModules.default];
-
     hm.services.hypridle = {
       enable = true;
       settings = {

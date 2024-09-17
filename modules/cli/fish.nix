@@ -4,10 +4,10 @@
   config,
   ...
 }: let
-  cfg = config.programs.fish;
+  cfg = config.cli.fish;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.programs.fish = {
+  options.cli.fish = {
     enable = mkEnableOption "fish";
   };
 

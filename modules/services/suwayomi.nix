@@ -4,9 +4,9 @@
   lib,
   ...
 }: let
-  cfg = config.programs.gui.suwayomi;
+  cfg = config.services.suwayomi;
 in {
-  options.programs.gui.suwayomi.enable = lib.mkEnableOption "Desktop manga/manwha reader";
+  options.services.suwayomi.enable = lib.mkEnableOption "Desktop manga/manwha reader";
 
   config = lib.mkIf cfg.enable {
     os.services.suwayomi-server = {

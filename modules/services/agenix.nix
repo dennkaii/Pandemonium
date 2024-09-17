@@ -1,13 +1,14 @@
 {
-  # config,
   inputs,
+  lib,
   pkgs,
   config,
   ...
 }: let
-  cfs = config.services;
+  cfg = config.services.agenix;
 in {
-  config = {
+  options.services.agenix.enable = lib.mkEnableOption "agenix for secrets";
+  config = lib.mkIf cfg.enable {
     inputs.agenix.url = "github:ryantm/agenix";
 
     osModules = [
