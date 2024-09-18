@@ -2,9 +2,11 @@
    Welcome to Pandemonium(name in progress)! 
 </h1>
 
+My nixos flake using [combined-manager](https://github.com/FlafyDev/combined-manager)
+
 ## Overview
 
-My nixos flake using [combined-manager](https://github.com/FlafyDev/combined-manager)
+- work in progress
 
 ### TODO
 
