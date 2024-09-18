@@ -73,7 +73,7 @@ in {
           {command = xwayland;}
           {command = ["fcitx5"];}
           {command = ["walker" "--gapplication-service"];}
-          {command = ["${pkgs.clipse}/bin/clipse" "-listen"];}
+          {command = ["clipse" "-listen"];}
         ];
 
         prefer-no-csd = true;
@@ -152,7 +152,7 @@ in {
           "${mod}+Space".action = spawn "walker";
           "${mod}+S".action = sh ''${screenarea}'';
           "${ms}+S".action = sh ''${screenactive}'';
-          "${ms}+A".action = sh ''wezterm -e '${pkgs.clipse}/bin/clipse' '';
+          "${ms}+A".action = sh ''wezterm -e 'clipse' '';
 
           "${ms}+Q".action = close-window;
           "${mc}+H".action = move-column-left;
@@ -198,6 +198,7 @@ in {
     };
 
     hm.home.packages = with pkgs; [
+      clipse
       swww
       satty
       grimblast

@@ -1,32 +1,22 @@
-# My Nixos Flake
+<h1 id="header" align="center">
+   Welcome to Pandemonium(name in progress)! 
+</h1>
 
-This flake contains my hosts, configs and modules.
+## Overview
 
-## structure
+basically my nixos flake using [combined-manager](https://github.com/FlafyDev/combined-manager)
 
-```
-Dennkaii/
-├───hosts/          (machine specific configuration)
-│   └───Aethyr/           [Main machine]
-│
-├───configs/          (User specific configuration)
-│   └───dennkaii/           [Unique User]
-│
-├───modules/        (custom modules you can enable under `config`)
-│   ├───display/         (Window managers configurations + fcitx)
-│   ├───programs/        (Modules for programs i use, wanted to or just tried one time, also games)
-│   ├───misc/        (Configuration of things that should alway be working no 'mkIf' modules)
-│   └───services/         (where i have docker, podman, tailscale. May merge with programs)
-│
-├───Wallpapes/        (Literally my wallpaper collection so far)
-│
-└───secrets/        (agenix secrets)
-```
+### TODO
 
-## TODO
 - [ ] Set Up Agenix
-- [ ] Find a new Wallpaper
 - [ ] Cloud server
-- [ ] organize modules properly
+- [x] organize modules properly
 
-And more to come soon.
+### Special thanks to:
+
+[n3oney](https://github.com/n3oney) -
+[jacekpoz](https://github.com/jacekpoz) -
+[FlafyDev](https://github.com/FlafyDev) -
+[Noah765](https://github.com/Noah765) -
+[NotAShelf](https://github.com/NotAShelf) -
+and many others i don't remember rn =)
