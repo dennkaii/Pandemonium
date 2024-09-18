@@ -9,7 +9,7 @@ in {
   options.gui.tidal.enable = lib.mkEnableOption "Tidal desktop app fuck electron";
 
   config = lib.mkIf cfg.enable {
-    hm.home.pacakges = [
+    hm.home.packages = [
       pkgs.tidal-hifi
     ];
   };

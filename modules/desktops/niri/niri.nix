@@ -73,15 +73,18 @@ in {
           {command = xwayland;}
           {command = ["fcitx5"];}
           {command = ["walker" "--gapplication-service"];}
-          {command = ["clipse" "-listen"];}
+          {command = ["${pkgs.clipse}/bin/clipse" "-listen"];}
         ];
 
         prefer-no-csd = true;
 
         outputs = {
           "eDP-1" = {
-            scale = 1;
+            scale = 1.2;
             variable-refresh-rate = true;
+          };
+          "HDMI-A-1" = {
+            scale = 1.3;
           };
         };
 
@@ -149,7 +152,7 @@ in {
           "${mod}+Space".action = spawn "walker";
           "${mod}+S".action = sh ''${screenarea}'';
           "${ms}+S".action = sh ''${screenactive}'';
-          "${ms}+A".action = sh ''wezterm -e 'clipse' '';
+          "${ms}+A".action = sh ''wezterm -e '${pkgs.clipse}/bin/clipse' '';
 
           "${ms}+Q".action = close-window;
           "${mc}+H".action = move-column-left;

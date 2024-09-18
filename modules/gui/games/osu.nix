@@ -5,7 +5,7 @@
   inputs,
   ...
 }: let
-  cfg = config.programs.gui.osu-lazer;
+  cfg = config.gui.games.osu-lazer;
   inherit (lib) mkEnableOption mkIf;
 in {
   options.gui.games = {

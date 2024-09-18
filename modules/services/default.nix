@@ -29,7 +29,7 @@ in {
     tailscale.enable = mkDefault false;
     hypridle.enable = mkDefault false;
     suwayomi.enable = mkDefault false;
-    kdeconnect.enable = mkDefault false;
+    kde.enable = mkDefault false;
     matugen.enable = mkDefault false;
   };
 }

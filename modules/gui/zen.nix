@@ -12,6 +12,6 @@ in {
   config = lib.mkIf cfg.enable {
     inputs.zen-browser.url = "github:dennkaii/zen-browser-flake";
 
-    hm.home.packages = with pkgs; [inputs.zen-browser.pacakges."${system}".default];
+    hm.home.packages = with pkgs; [inputs.zen-browser.packages."${system}".default];
   };
 }
