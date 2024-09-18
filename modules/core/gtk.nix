@@ -5,10 +5,10 @@
   hmConfig,
   ...
 }: let
-  cfg = config.gtk;
+  cfg = config.core.gtk;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.gtk.enable = mkEnableOption "gtk";
+  options.core.gtk.enable = mkEnableOption "gtk";
 
   config = mkIf cfg.enable {
     hm = {

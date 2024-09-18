@@ -10,7 +10,7 @@
     niri-session = "run/current-system/sw/bin/niri-session";
   in {
     user = "${config.users.main}";
-    command = "${niri-session}";
+    command = "niri-session";
   };
 
   defaultSession = {

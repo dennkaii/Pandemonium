@@ -9,6 +9,7 @@ in {
   imports = [
     ./hyprland/hyprland.nix
     ./fcitx/fcitx.nix
+    ./login/greetd.nix
     ./niri/niri.nix
     ./river/river.nix
   ];

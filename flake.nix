@@ -28,7 +28,6 @@ in
       Aethyr = {
         modules = [
           ./hosts/Aethyr
-          ./configs/dennkaii
         ];
       };
     };

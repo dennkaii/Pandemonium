@@ -5,10 +5,10 @@
   inputs,
   ...
 }: let
-  cfg = config.fonts;
+  cfg = config.core.fonts;
   inherit (lib) mkEnableOption mkIf;
 in {
-  options.fonts = {
+  options.core.fonts = {
     enable = mkEnableOption "fonts";
   };
 

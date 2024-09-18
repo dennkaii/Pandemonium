@@ -4,11 +4,11 @@
   pkgs,
   ...
 }: let
-  cfg = config.vm;
+  cfg = config.services.vm;
   inherit (lib) mkIf mkEnableOption;
 in {
-  options.vm = {
-    enable = mkEnableOption "vm";
+  options.services.vm = {
+    enable = mkEnableOption "virtual manager for making virtual machines.";
   };
 
   config = mkIf cfg.enable {
@@ -25,7 +25,6 @@ in {
 
     os = {
       virtualisation = {
-        # vmware.host.enable = true;
         libvirtd = {
           enable = true;
           qemu = {
