@@ -11,6 +11,7 @@ in {
     ./ompsh.nix
     ./radicle.nix
     ./nu.nix
+    ./graphite.nix
     ./fish.nix
   ];
   options.cli.enable = lib.mkEnableOption "cli programs modules";
@@ -21,6 +22,7 @@ in {
     ompsh.enable = lib.mkDefault false;
     radicle.enable = lib.mkDefault false;
     nu.enable = lib.mkDefault false;
+    graphite.enable = lib.mkDefault false;
     fish.enable = lib.mkDefault false;
   };
 }
