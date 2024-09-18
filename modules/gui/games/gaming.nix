@@ -5,10 +5,10 @@
   inputs,
   ...
 }: let
-  cfg = config.programs.games;
+  cfg = config.gui.games;
   inherit (lib) mkIf mkEnableOption;
 in {
-  options.programs.games = {
+  options.gui.games = {
     steam.enable = mkEnableOption "steam";
     lutris.enable = mkEnableOption "lutris";
   };

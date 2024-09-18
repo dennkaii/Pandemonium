@@ -20,6 +20,12 @@ in {
     ./waybar.nix
     ./wezterm/wezterm.nix
     ./1password.nix
+    ./zen.nix
+    ./tidal.nix
+    ./utilities.nix
+    ./games/osu.nix
+    ./games/gaming.nix
+    ./games/minecraft.nix
   ];
   options.gui.enable = lib.mkEnableOption "Programs dependant of the graphical environment";
 
@@ -38,5 +44,15 @@ in {
     waybar.enable = lib.mkDefault false;
     wezterm.enable = lib.mkDefault false;
     _1password.enable = lib.mkDefault false;
+    zen.enable = lib.mkDefault false;
+    tidal.enable = lib.mkDefault false;
+    utilities.enable = lib.mkDefault false;
+
+    games = {
+      steam.enable = lib.mkDefault false;
+      lutris.enable = lib.mkDefault false;
+      minecraft.enable = lib.mkDefault false;
+      osu-lazer.enable = lib.mkDefault false;
+    };
   };
 }

@@ -4,7 +4,7 @@
   config,
   ...
 }: let
-  cfg = config.programs.games.minecraft;
+  cfg = config.gui.games.minecraft;
 
   jdks = with pkgs; [
     # Java 8
@@ -30,7 +30,7 @@
   ];
   # glfw = pkgs.glfw-wayland-minecraft;
 in {
-  options.programs.games.minecraft.enable = lib.mkEnableOption "minectaft";
+  options.gui.games.minecraft.enable = lib.mkEnableOption "minectaft";
 
   config = lib.mkIf cfg.enable {
     hm.home.packages = [

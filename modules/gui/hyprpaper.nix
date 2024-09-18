@@ -7,7 +7,7 @@
   inherit (lib) mkEnableOption mkIf;
 in {
   options = {
-    programs.gui.hyprpaper.enable = mkEnableOption "hyprpaper";
+    gui.hyprpaper.enable = mkEnableOption "hyprpaper";
   };
 
   config = mkIf cfg.enable {
