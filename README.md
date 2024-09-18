@@ -4,7 +4,7 @@
 
 ## Overview
 
-basically my nixos flake using [combined-manager](https://github.com/FlafyDev/combined-manager)
+My nixos flake using [combined-manager](https://github.com/FlafyDev/combined-manager)
 
 ### TODO
 
