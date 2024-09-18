@@ -28,6 +28,7 @@
     enable = true;
     git.enable = true;
     starship.enable = true;
+    graphite.enable = true;
     nu.enable = true;
   };
 
