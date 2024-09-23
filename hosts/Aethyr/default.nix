@@ -1,12 +1,18 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  wallpkgs = inputs.wallpkgs.packages.${pkgs.system}.unorganized;
+in {
   imports = [./hardware];
 
   users = {
     main = "dennkaii";
     host = "Aethyr";
   };
-
   defaults = {
+    wallpaper = "${wallpkgs}/share/wallpapers/unorganized/10.jpg";
     terminal = "wezterm";
     cursor = {
       name = "Breeze_Snow";

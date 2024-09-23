@@ -17,7 +17,11 @@ in
         inputs.nixpkgs.follows = "nixpkgs";
       };
       flake-parts.url = "github:hercules-ci/flake-parts";
+
+      #for colorshemes
       basix.url = "github:NotAShelf/Basix";
+      #for wallpaper
+      wallpkgs.url = "github:dennkaii/wallpkgs";
     };
 
     globalModules = [

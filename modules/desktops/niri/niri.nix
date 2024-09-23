@@ -226,7 +226,7 @@ in {
           wants = ["swww.service"];
           after = ["swww.service"];
           serviceConfig = {
-            ExecStart = ''${pkgs.swww}/bin/swww img "/home/${config.users.main}/NixArchy/wallpapers/gravity_falls.gif" --transition-type random'';
+            ExecStart = ''${pkgs.swww}/bin/swww img "${config.defaults.wallpaper}" --transition-type random'';
             Restart = "on-failure";
             Type = "oneshot";
           };

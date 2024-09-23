@@ -6,7 +6,7 @@
   cfg = config.tui;
 in {
   imports = [
-    ./neovim.nix
+    ./neovim/neovim.nix
     ./superfile.nix
     ./emacs.nix
     ./helix/helix.nix

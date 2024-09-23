@@ -10,7 +10,6 @@
         type = with lib.types; str;
       };
 
-      #need to fix
       wallpaper = lib.mkOption {
         type = with lib.types; str;
       };
