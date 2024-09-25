@@ -167,8 +167,12 @@ in {
           "${mod}+J".action = focus-window-or-workspace-down;
           "${mod}+K".action = focus-window-or-workspace-up;
           "${mod}+L".action = focus-column-right;
-          "${ms}+Plus".action = set-column-width "+10";
-          "${ms}+Minus".action = set-column-width "-10";
+          "Alt+Plus".action = set-column-width "+10%";
+          "Alt+Equal".action = set-column-width "+10%";
+          "Alt+Minus".action = set-column-width "-10%";
+          "Mod+Plus".action = set-window-height "+10%";
+          "Mod+Equal".action = set-window-height "+10%";
+          "Mod+Minus".action = set-window-height "-10%";
 
           "${ms}+comma".action = consume-or-expel-window-left;
           "${ms}+period".action = consume-or-expel-window-right;
@@ -198,6 +202,7 @@ in {
     };
 
     hm.home.packages = with pkgs; [
+      wl-clipboard
       clipse
       swww
       satty

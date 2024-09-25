@@ -26,6 +26,13 @@ in {
       settings = {
         vim = {
           package = pkgs.neovim-unwrapped;
+
+          theme = {
+            enable = true;
+            name = "oxocarbon";
+            style = "dark";
+          };
+
           autoIndent = true;
           autocomplete.enable = true;
           autopairs.enable = true;

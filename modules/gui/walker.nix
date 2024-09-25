@@ -19,17 +19,6 @@ in {
       enable = true;
       runAsService = true;
       package = inputs.walker.packages.${pkgs.hostPlatform.system}.default;
-
-      config = {
-        placeholder = "Type Something...";
-        fullscreen = true;
-        show_initial_entries = false;
-
-        search = {
-          hide_icons = false;
-          hide_spinner = true;
-        };
-      };
     };
   };
 }

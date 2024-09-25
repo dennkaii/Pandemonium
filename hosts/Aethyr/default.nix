@@ -24,6 +24,7 @@ in {
   desktops = {
     enable = true;
     niri.enable = true;
+    fcitx.enable = true;
   };
 
   core = {
