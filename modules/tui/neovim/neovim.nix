@@ -9,6 +9,7 @@
 in {
   options.tui.neovim.enable = lib.mkEnableOption "nvf";
 
+  imports = [./mappings.nix];
   config = lib.mkIf cfg.enable {
     inputs = {
       nvf = {
@@ -26,6 +27,10 @@ in {
       settings = {
         vim = {
           package = pkgs.neovim-unwrapped;
+
+          visuals = {
+            nvimWebDevicons.enable = true;
+          };
 
           theme = {
             enable = true;
@@ -51,11 +56,33 @@ in {
           };
           filetree.neo-tree = {
             enable = true;
+            setupOpts = {
+              git_status_async = true;
+              window = {
+                mapping_options = {nowait = false;};
+                mappings = {
+                  "<space>" = "none";
+                  "l" = "open";
+                  # "h" = {"@1" = "navigate_up";};
+                  "z" = "none";
+                  "zc" = "close_node";
+                  "zC" = "close_all_nodes";
+                  "v" = "open_vsplit";
+                };
+              };
+            };
           };
 
-          # tabline.nvimBufferLine = {
-          #   enable = true;
-          # };
+          git = {
+            enable = true;
+            gitsigns.enable = true;
+            vim-fugitive.enable = true;
+          };
+
+          tabline = {
+            nvimBufferline.enable = true;
+          };
+
           telescope = {
             enable = true;
           };
