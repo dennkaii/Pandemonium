@@ -49,11 +49,15 @@ in {
           spellcheck.enable = true;
           disableArrows = true;
 
-          binds.cheatsheet.enable = true;
+          binds = {
+            cheatsheet.enable = true;
+            whichKey.enable = true;
+          };
 
           dashboard.alpha = {
             enable = true;
           };
+
           filetree.neo-tree = {
             enable = true;
             setupOpts = {

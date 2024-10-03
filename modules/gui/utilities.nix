@@ -24,6 +24,7 @@ in {
       rar
       nautilus
       socat
+      anki
       jq
     ];
   };
