@@ -5,7 +5,7 @@ let
   });
 in
   combinedManager.mkFlake {
-    description = "yet another another flake oml";
+    description = "yet another another flake";
 
     lockFile = ./flake.lock;
 
