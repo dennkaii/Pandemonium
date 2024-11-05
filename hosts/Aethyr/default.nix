@@ -3,7 +3,7 @@
   inputs,
   ...
 }: let
-  wallpkgs = inputs.wallpkgs.packages.${pkgs.system}.unorganized;
+  wallpkgs = inputs.wallpkgs.packages.${pkgs.system}.oxocarbon;
 in {
   imports = [./hardware];
 
@@ -12,7 +12,7 @@ in {
     host = "Aethyr";
   };
   defaults = {
-    wallpaper = "${wallpkgs}/share/wallpapers/unorganized/10.jpg";
+    wallpaper = "${wallpkgs}/share/wallpapers/oxocarbon/02.png";
     terminal = "wezterm";
     cursor = {
       name = "Breeze_Snow";
@@ -53,6 +53,8 @@ in {
     tidal.enable = true;
     utilities.enable = true;
     zen.enable = true;
+    nyxt.enable = true;
+    notes.enable = true;
     games = {
       steam.enable = true;
       lutris.enable = true;

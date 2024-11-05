@@ -61,7 +61,7 @@ in {
           xwayland = [
             "sh"
             "${pkgs.writeShellScript "xwayland_on_niri" ''
-              ${pkgs.toybox}/bin/setsid ${pkgs.xwayland-satellite}/bin/xwayland-satellite
+              ${pkgs.toybox}/bin/setsid ${pkgs.xwayland-satellite-unstable}/bin/xwayland-satellite
               ${pkgs.toybox}/bin/sleep 4
               ${pkgs.dbus}/bin/dbus-update-activation-environment --systemd "DISPLAY"
             ''}"
@@ -70,6 +70,7 @@ in {
           {
             command = ["${pkgs.wluma}/bin/wluma"];
           }
+          {command = ["waybar"];}
           {command = xwayland;}
           {command = ["fcitx5"];}
           {command = ["walker" "--gapplication-service"];}
@@ -135,7 +136,7 @@ in {
           {
             # dim unfocused windows
             matches = [{is-focused = false;}];
-            opacity = 0.70;
+            opacity = 0.95;
           }
         ];
 
@@ -224,7 +225,6 @@ in {
             RestartSec = 1;
           };
         };
-        #Must migrate to wallpkgs
         defualt_wall = {
           enable = true;
           wantedBy = ["swww.service"];

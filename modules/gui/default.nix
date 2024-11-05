@@ -26,6 +26,8 @@ in {
     ./games/osu.nix
     ./games/gaming.nix
     ./games/minecraft.nix
+    ./nyxt.nix
+    ./notes.nix
   ];
   options.gui.enable = lib.mkEnableOption "Programs dependant of the graphical environment";
 
@@ -45,8 +47,10 @@ in {
     wezterm.enable = lib.mkDefault false;
     _1password.enable = lib.mkDefault false;
     zen.enable = lib.mkDefault false;
+    nyxt.enable = lib.mkDefault false;
     tidal.enable = lib.mkDefault false;
     utilities.enable = lib.mkDefault false;
+    notes.enable = lib.mkDefault false;
 
     games = {
       steam.enable = lib.mkDefault false;

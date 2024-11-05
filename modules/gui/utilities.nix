@@ -17,6 +17,7 @@ in {
       libreoffice-qt
       stremio
       ani-cli
+      blender
       foliate
       btop
       element-desktop

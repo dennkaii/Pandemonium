@@ -18,7 +18,7 @@ in {
     hm.programs.walker = {
       enable = true;
       runAsService = true;
-      package = inputs.walker.packages.${pkgs.hostPlatform.system}.default;
+      # package = inputs.walker.packages.${pkgs.hostPlatform.system}.default;
     };
   };
 }
