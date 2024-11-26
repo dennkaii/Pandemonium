@@ -15,6 +15,7 @@ in {
       pwvucontrol
       alsa-utils
       libreoffice-qt
+      arduino
       stremio
       ani-cli
       blender
@@ -24,6 +25,7 @@ in {
       macchina
       rar
       nautilus
+      ripgrep
       socat
       anki
       jq

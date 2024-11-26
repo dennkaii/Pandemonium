@@ -10,6 +10,7 @@ in {
     ./superfile.nix
     ./emacs.nix
     ./helix/helix.nix
+    ./rmpc.nix
   ];
   options.tui.enable = lib.mkEnableOption "Text-based user interface programs";
 
@@ -18,5 +19,6 @@ in {
     superfile.enable = lib.mkDefault false;
     emacs.enable = lib.mkDefault false;
     helix.enable = lib.mkDefault false;
+    rmpc.enable = lib.mkDefault false;
   };
 }

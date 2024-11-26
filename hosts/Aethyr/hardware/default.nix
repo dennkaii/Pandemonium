@@ -53,6 +53,7 @@
     hardware = {
       bluetooth = {
         enable = true;
+        powerOnBoote = true;
       };
       graphics = {
         enable = true;

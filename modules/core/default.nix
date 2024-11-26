@@ -14,6 +14,7 @@ in {
     ./pipewire.nix
     ./fonts.nix
     ./gtk.nix
+    ./fingerprint.nix
   ];
 
   config.core = lib.mkIf cfg.enable {
@@ -23,5 +24,6 @@ in {
     nix-helper.enable = lib.mkIf config.core.nix.enable (lib.mkDefault true);
     fonts.enable = lib.mkIf config.desktops.enable (lib.mkDefault true);
     gtk.enable = lib.mkIf config.desktops.enable (lib.mkDefault true);
+    fprint.enable = lib.mkDefault false;
   };
 }

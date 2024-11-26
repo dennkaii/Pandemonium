@@ -28,6 +28,7 @@ in {
     ./games/minecraft.nix
     ./nyxt.nix
     ./notes.nix
+    ./rofi.nix
   ];
   options.gui.enable = lib.mkEnableOption "Programs dependant of the graphical environment";
 
@@ -51,6 +52,7 @@ in {
     tidal.enable = lib.mkDefault false;
     utilities.enable = lib.mkDefault false;
     notes.enable = lib.mkDefault false;
+    rofi.enable = lib.mkDefault false;
 
     games = {
       steam.enable = lib.mkDefault false;

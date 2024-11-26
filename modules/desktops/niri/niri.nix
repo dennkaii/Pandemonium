@@ -73,7 +73,8 @@ in {
           {command = ["waybar"];}
           {command = xwayland;}
           {command = ["fcitx5"];}
-          {command = ["walker" "--gapplication-service"];}
+          # {command = ["walker" "--gapplication-service"];}
+          # {command = ["rofi" "-show" "drun"];}
           {command = ["clipse" "-listen"];}
         ];
 
@@ -150,7 +151,7 @@ in {
           screenactive = "grimblast save active - | satty --filename - ";
         in {
           "${mod}+Return".action = spawn "${config.defaults.terminal}";
-          "${mod}+Space".action = spawn "walker";
+          "${mod}+Space".action = spawn "${pkgs.rofi-wayland-unwrapped}/bin/rofi" "-show" "drun";
           "${mod}+S".action = sh ''${screenarea}'';
           "${ms}+S".action = sh ''${screenactive}'';
           "${ms}+A".action = sh ''wezterm -e 'clipse' '';

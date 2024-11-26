@@ -17,8 +17,8 @@ in {
       material-symbols
       font-awesome_5
       # normal fonts
+      noto-fonts-cjk-sans
       noto-fonts
-      noto-fonts-cjk
       noto-fonts-emoji
       roboto
       monaspace
